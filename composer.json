@@ -1,0 +1,45 @@
+{
+  "name": "dotkernel/dot-validator",
+  "description": "Adapts zend-validator to DotKernel applications",
+  "authors": [
+    {
+      "name": "Popa Tiberiu",
+      "email": "tibi@apidemia.com"
+    }
+  ],
+  "type": "library",
+  "license": "MIT",
+  "keywords": [
+    "validator",
+    "services",
+    "factories",
+    "container",
+    "zf2",
+    "zf3",
+    "service-manager"
+  ],
+  "require": {
+    "php": "^5.6 || ^7.0",
+    "zendframework/zend-servicemanager": "^3.0",
+    "zendframework/zend-validator": "^2.8"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^4.7",
+    "squizlabs/php_codesniffer": "^2.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Dot\\Validator\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "DotTest\\Validator\\": "tests"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "0.6-dev"
+    }
+  }
+}
