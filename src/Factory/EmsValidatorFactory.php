@@ -9,6 +9,7 @@
 
 namespace Dot\Validator\Factory;
 
+use Dot\Ems\Service\ServiceInterface;
 use Dot\Validator\Ems\AbstractRecord;
 use Interop\Container\ContainerInterface;
 use Zend\Validator\Exception\RuntimeException;
@@ -28,8 +29,9 @@ class EmsValidatorFactory
             }
         }
 
-        if (! $service) {
-            throw new RuntimeException('Validator could not be created. Entity service dependency not found');
+        if (! $service instanceof ServiceInterface) {
+            throw new RuntimeException('Validator could not be created. ' .
+                'Entity service dependency not found or not an instance of' . ServiceInterface::class);
         }
 
         /** @var AbstractRecord $validator */
