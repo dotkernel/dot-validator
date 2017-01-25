@@ -33,13 +33,13 @@ class ConfigProvider
                         RecordExists::class => EmsValidatorFactory::class,
                     ],
                     'aliases' => [
-                        'norecordexists' => NoRecordExists::class,
-                        'noRecordExists' => NoRecordExists::class,
-                        'NoRecordExists' => NoRecordExists::class,
+                        'emsnorecordexists' => NoRecordExists::class,
+                        'emsNoRecordExists' => NoRecordExists::class,
+                        'EmsNoRecordExists' => NoRecordExists::class,
 
-                        'recordexists' => RecordExists::class,
-                        'recordExists' => RecordExists::class,
-                        'RecordExists' => RecordExists::class,
+                        'emsrecordexists' => RecordExists::class,
+                        'emsRecordExists' => RecordExists::class,
+                        'EmsRecordExists' => RecordExists::class,
                     ],
                 ]
             ],
