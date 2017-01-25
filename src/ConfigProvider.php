@@ -9,6 +9,9 @@
 
 namespace Dot\Validator;
 
+use Dot\Validator\Ems\NoRecordExists;
+use Dot\Validator\Ems\RecordExists;
+use Dot\Validator\Factory\EmsValidatorFactory;
 use Dot\Validator\Factory\ValidatorPluginManagerFactory;
 use Zend\Validator\ValidatorPluginManager;
 
@@ -24,7 +27,21 @@ class ConfigProvider
             'dependencies' => $this->getDependenciesConfig(),
 
             'dot_validator' => [
-                'validator_manager' => []
+                'validator_manager' => [
+                    'factories' => [
+                        NoRecordExists::class => EmsValidatorFactory::class,
+                        RecordExists::class => EmsValidatorFactory::class,
+                    ],
+                    'aliases' => [
+                        'norecordexists' => NoRecordExists::class,
+                        'noRecordExists' => NoRecordExists::class,
+                        'NoRecordExists' => NoRecordExists::class,
+
+                        'recordexists' => RecordExists::class,
+                        'recordExists' => RecordExists::class,
+                        'RecordExists' => RecordExists::class,
+                    ],
+                ]
             ],
         ];
     }
