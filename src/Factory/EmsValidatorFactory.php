@@ -26,6 +26,7 @@ class EmsValidatorFactory
         if (!empty($options)) {
             if (isset($options['service']) && $container->has($options['service'])) {
                 $service = $container->get($options['service']);
+                unset($options['service']);
             }
         }
 
