@@ -7,6 +7,8 @@
  * Time: 9:09 PM
  */
 
+declare(strict_types = 1);
+
 namespace Dot\Validator\Ems;
 
 /**
@@ -19,7 +21,7 @@ class NoRecordExists extends AbstractRecord
      * @param mixed $value
      * @return bool
      */
-    public function isValid($value)
+    public function isValid($value): bool
     {
         $valid = true;
         $this->setValue($value);

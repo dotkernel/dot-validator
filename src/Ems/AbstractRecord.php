@@ -7,9 +7,12 @@
  * Time: 9:01 PM
  */
 
+declare(strict_types = 1);
+
 namespace Dot\Validator\Ems;
 
 use Dot\Ems\Service\EntityService;
+use Dot\Ems\Service\ServiceInterface;
 use Zend\Validator\AbstractValidator;
 
 /**
@@ -57,9 +60,9 @@ abstract class AbstractRecord extends AbstractValidator
     /**
      * getService
      *
-     * @return EntityService
+     * @return ServiceInterface
      */
-    public function getService()
+    public function getService(): ServiceInterface
     {
         return $this->service;
     }
@@ -67,10 +70,10 @@ abstract class AbstractRecord extends AbstractValidator
     /**
      * setService
      *
-     * @param EntityService $service
+     * @param ServiceInterface $service
      * @return AbstractRecord
      */
-    public function setService(EntityService $service)
+    public function setService(ServiceInterface $service)
     {
         $this->service = $service;
         return $this;

@@ -7,6 +7,8 @@
  * Time: 11:31 PM
  */
 
+declare(strict_types = 1);
+
 namespace Dot\Validator;
 
 use Dot\Validator\Ems\NoRecordExists;
@@ -21,7 +23,7 @@ use Zend\Validator\ValidatorPluginManager;
  */
 class ConfigProvider
 {
-    public function __invoke()
+    public function __invoke(): array
     {
         return [
             'dependencies' => $this->getDependenciesConfig(),
@@ -46,7 +48,7 @@ class ConfigProvider
         ];
     }
 
-    public function getDependenciesConfig()
+    public function getDependenciesConfig(): array
     {
         return [
             'factories' => [

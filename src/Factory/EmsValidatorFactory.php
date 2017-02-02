@@ -7,6 +7,8 @@
  * Time: 5:44 PM
  */
 
+declare(strict_types = 1);
+
 namespace Dot\Validator\Factory;
 
 use Dot\Ems\Service\ServiceInterface;
@@ -30,7 +32,7 @@ class EmsValidatorFactory
             }
         }
 
-        if (! $service instanceof ServiceInterface) {
+        if (!$service instanceof ServiceInterface) {
             throw new RuntimeException('Validator could not be created. ' .
                 'Entity service dependency not found or not an instance of' . ServiceInterface::class);
         }

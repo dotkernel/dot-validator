@@ -7,6 +7,8 @@
  * Time: 11:32 PM
  */
 
+declare(strict_types = 1);
+
 namespace Dot\Validator\Factory;
 
 use Interop\Container\ContainerInterface;
@@ -26,7 +28,8 @@ class ValidatorPluginManagerFactory
         $config = $container->has('config') ? $container->get('config') : [];
         if (isset($config[$this->configKey])
             && isset($config[$this->configKey][$this->validatorPluginConfigKey])
-            && is_array($config[$this->configKey][$this->validatorPluginConfigKey])) {
+            && is_array($config[$this->configKey][$this->validatorPluginConfigKey])
+        ) {
             $config = $config[$this->configKey][$this->validatorPluginConfigKey];
         }
 
