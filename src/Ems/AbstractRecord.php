@@ -11,8 +11,8 @@ declare(strict_types = 1);
 
 namespace Dot\Validator\Ems;
 
-use Dot\Ems\Service\EntityService;
-use Dot\Ems\Service\ServiceInterface;
+use Dot\Ems\Mapper\MapperInterface;
+use Dot\Ems\Mapper\MapperManager;
 use Zend\Validator\AbstractValidator;
 
 /**
@@ -34,14 +34,20 @@ abstract class AbstractRecord extends AbstractValidator
         self::ERROR_RECORD_FOUND => "A record matching the input was found",
     );
     /**
-     * @var EntityService
+     * @var MapperManager
      */
-    protected $service;
+    protected $mapperManager;
 
     /**
      * @var string
      */
-    protected $key;
+    protected $field;
+
+    /** @var  string */
+    protected $entity;
+
+    /** @var  array */
+    protected $exclude;
 
     /**
      * Required options are:
@@ -50,33 +56,20 @@ abstract class AbstractRecord extends AbstractValidator
      */
     public function __construct(array $options)
     {
-        if (!array_key_exists('key', $options)) {
-            throw new \InvalidArgumentException('No key provided');
+        if (!array_key_exists('field', $options)) {
+            throw new \InvalidArgumentException('No field provided');
         }
-        $this->setKey($options['key']);
+        if (!array_key_exists('entity', $options)) {
+            throw new \InvalidArgumentException('No entity name provided');
+        }
+        $this->setField($options['field']);
+        $this->setEntity($options['entity']);
+
+        if (isset($options['exclude']) && is_array($options['exclude'])) {
+            $this->exclude = $options['exclude'];
+        }
+
         parent::__construct($options);
-    }
-
-    /**
-     * getService
-     *
-     * @return ServiceInterface
-     */
-    public function getService(): ServiceInterface
-    {
-        return $this->service;
-    }
-
-    /**
-     * setService
-     *
-     * @param ServiceInterface $service
-     * @return AbstractRecord
-     */
-    public function setService(ServiceInterface $service)
-    {
-        $this->service = $service;
-        return $this;
     }
 
     /**
@@ -87,29 +80,86 @@ abstract class AbstractRecord extends AbstractValidator
      */
     protected function query($value)
     {
-        $result = $this->service->find([$this->getKey() => $value]);
+        $conditions = [$this->field => $value];
+        /** @var MapperInterface $mapper */
+        $mapper = $this->mapperManager->get($this->getEntity());
+        if (!empty($this->exclude)) {
+            $field = $this->exclude['field'] ?? '';
+            $excludedValue = $this->exclude['value'] ?? '';
+            $operator = $this->exclude['operator'] ?? '!=';
+
+            if (!empty($field) && !empty($excludedValue)) {
+                $conditions[] = ['field' => $field, 'value' => $value, 'operator' => $operator];
+            }
+        }
+        $result = $mapper->find('all', [
+            'conditions' => $conditions
+        ]);
+
         return $result;
     }
 
     /**
-     * Get key.
-     *
      * @return string
      */
-    public function getKey()
+    public function getField(): string
     {
-        return $this->key;
+        return $this->field;
     }
 
     /**
-     * Set key.
-     *
-     * @param string $key
-     * @return $this
+     * @param string $field
      */
-    public function setKey($key)
+    public function setField(string $field)
     {
-        $this->key = $key;
-        return $this;
+        $this->field = $field;
+    }
+
+    /**
+     * @return string
+     */
+    public function getEntity(): string
+    {
+        return $this->entity;
+    }
+
+    /**
+     * @param string $entity
+     */
+    public function setEntity(string $entity)
+    {
+        $this->entity = $entity;
+    }
+
+    /**
+     * @return MapperManager
+     */
+    public function getMapperManager(): MapperManager
+    {
+        return $this->mapperManager;
+    }
+
+    /**
+     * @param MapperManager $mapperManager
+     */
+    public function setMapperManager(MapperManager $mapperManager)
+    {
+        $this->mapperManager = $mapperManager;
+    }
+
+    /**
+     * @return array
+     */
+    public function getExclude(): array
+    {
+        return $this->exclude;
+    }
+
+    /**
+     * @param array $exclude
+     */
+    public function setExclude(array $exclude)
+    {
+        $this->exclude = $exclude;
     }
 }
