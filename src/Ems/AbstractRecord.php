@@ -89,7 +89,7 @@ abstract class AbstractRecord extends AbstractValidator
             $operator = $this->exclude['operator'] ?? '!=';
 
             if (!empty($field) && !empty($excludedValue)) {
-                $conditions[] = ['field' => $field, 'value' => $value, 'operator' => $operator];
+                $conditions[] = $mapper->quoteIdentifier($field) . $operator . $mapper->quoteValue($excludedValue);
             }
         }
         $result = $mapper->find('all', [
