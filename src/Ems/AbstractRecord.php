@@ -54,8 +54,9 @@ abstract class AbstractRecord extends AbstractValidator
      *  - key
      * @param array $options
      */
-    public function __construct(array $options)
+    public function __construct(array $options = null)
     {
+        $options = $options ?? [];
         if (!array_key_exists('field', $options)) {
             throw new \InvalidArgumentException('No field provided');
         }

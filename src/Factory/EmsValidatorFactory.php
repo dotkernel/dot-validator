@@ -21,7 +21,7 @@ use Interop\Container\ContainerInterface;
  */
 class EmsValidatorFactory
 {
-    public function __invoke(ContainerInterface $container, $requestedName, $options = [])
+    public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         /** @var AbstractRecord $validator */
         $validator = new $requestedName($options);
