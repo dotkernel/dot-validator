@@ -28,16 +28,10 @@
     "squizlabs/php_codesniffer": "^2.5",
 
     "dotkernel/dot-mapper": "dev-develop as 0.6.x-dev",
-    "dotkernel/dot-hydrator": "0.6.x-dev",
-    "dotkernel/dot-helpers": "dev-develop as 0.6.x-dev",
-    "dotkernel/dot-event": "dev-develop as 0.6.x-dev"
+    "dotkernel/dot-hydrator": "^1.0",
+    "dotkernel/dot-helpers": "~0.1",
+    "dotkernel/dot-event": "~0.1"
   },
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/dotkernel/dot-mapper"
-    }
-  ],
   "autoload": {
     "psr-4": {
       "Dot\\Validator\\": "src"
