@@ -1,2 +1,3 @@
 # dot-validator
-Adapts zend-validator to DotKernel applications
+
+DotKernel validator component extending and customizing [zend-validator](https://github.com/zendframework/zend-validator)

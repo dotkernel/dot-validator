@@ -11,15 +11,15 @@ declare(strict_types = 1);
 
 namespace Dot\Validator\Factory;
 
-use Dot\Ems\Mapper\MapperManager;
-use Dot\Validator\Ems\AbstractRecord;
+use Dot\Mapper\Mapper\MapperManager;
+use Dot\Validator\Mapper\AbstractRecord;
 use Interop\Container\ContainerInterface;
 
 /**
  * Class EmsValidatorFactory
  * @package Dot\Validator\Factory
  */
-class EmsValidatorFactory
+class MapperValidatorFactory
 {
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {

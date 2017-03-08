@@ -1,6 +1,6 @@
 {
   "name": "dotkernel/dot-validator",
-  "description": "Adapts zend-validator to DotKernel applications",
+  "description": "DotKernel validator component extending and customizing zend-validator",
   "authors": [
     {
       "name": "n3vrax",
@@ -27,7 +27,7 @@
     "phpunit/phpunit": "^4.7",
     "squizlabs/php_codesniffer": "^2.5",
 
-    "dotkernel/dot-ems": "dev-reworked as 0.6.x-dev",
+    "dotkernel/dot-mapper": "dev-develop as 0.6.x-dev",
     "dotkernel/dot-hydrator": "0.6.x-dev",
     "dotkernel/dot-helpers": "dev-develop as 0.6.x-dev",
     "dotkernel/dot-event": "dev-develop as 0.6.x-dev"
@@ -35,11 +35,7 @@
   "repositories": [
     {
       "type": "vcs",
-      "url": "https://github.com/dotkernel/dot-ems"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/dotkernel/dot-hydrator"
+      "url": "https://github.com/dotkernel/dot-mapper"
     }
   ],
   "autoload": {

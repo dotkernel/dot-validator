@@ -4,18 +4,18 @@
  * @library: dotkernel/dot-ems
  * @author: n3vrax
  * Date: 6/23/2016
- * Time: 9:10 PM
+ * Time: 9:09 PM
  */
 
 declare(strict_types = 1);
 
-namespace Dot\Validator\Ems;
+namespace Dot\Validator\Mapper;
 
 /**
- * Class RecordExists
+ * Class NoRecordExists
  * @package Dot\User\Validator
  */
-class RecordExists extends AbstractRecord
+class NoRecordExists extends AbstractRecord
 {
     /**
      * @param mixed $value
@@ -26,9 +26,9 @@ class RecordExists extends AbstractRecord
         $valid = true;
         $this->setValue($value);
         $result = $this->query($value);
-        if (!$result) {
+        if ($result) {
             $valid = false;
-            $this->error(self::ERROR_NO_RECORD_FOUND);
+            $this->error(self::ERROR_RECORD_FOUND);
         }
         return $valid;
     }

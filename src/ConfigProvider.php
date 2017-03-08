@@ -11,10 +11,10 @@ declare(strict_types = 1);
 
 namespace Dot\Validator;
 
-use Dot\Validator\Ems\NoRecordExists;
-use Dot\Validator\Ems\RecordExists;
-use Dot\Validator\Factory\EmsValidatorFactory;
+use Dot\Validator\Factory\MapperValidatorFactory;
 use Dot\Validator\Factory\ValidatorPluginManagerFactory;
+use Dot\Validator\Mapper\NoRecordExists;
+use Dot\Validator\Mapper\RecordExists;
 use Zend\Validator\ValidatorPluginManager;
 
 /**
@@ -31,8 +31,8 @@ class ConfigProvider
             'dot_validator' => [
                 'validator_manager' => [
                     'factories' => [
-                        NoRecordExists::class => EmsValidatorFactory::class,
-                        RecordExists::class => EmsValidatorFactory::class,
+                        NoRecordExists::class => MapperValidatorFactory::class,
+                        RecordExists::class => MapperValidatorFactory::class,
                     ],
                     'aliases' => [
                         'emsnorecordexists' => NoRecordExists::class,

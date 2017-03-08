@@ -9,10 +9,10 @@
 
 declare(strict_types = 1);
 
-namespace Dot\Validator\Ems;
+namespace Dot\Validator\Mapper;
 
-use Dot\Ems\Mapper\MapperInterface;
-use Dot\Ems\Mapper\MapperManager;
+use Dot\Mapper\Mapper\MapperInterface;
+use Dot\Mapper\Mapper\MapperManager;
 use Zend\Validator\AbstractValidator;
 
 /**
