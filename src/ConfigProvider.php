@@ -35,13 +35,13 @@ class ConfigProvider
                         RecordExists::class => MapperValidatorFactory::class,
                     ],
                     'aliases' => [
-                        'emsnorecordexists' => NoRecordExists::class,
-                        'emsNoRecordExists' => NoRecordExists::class,
-                        'EmsNoRecordExists' => NoRecordExists::class,
+                        'mappernorecordexists' => NoRecordExists::class,
+                        'mapperNoRecordExists' => NoRecordExists::class,
+                        'MapperNoRecordExists' => NoRecordExists::class,
 
-                        'emsrecordexists' => RecordExists::class,
-                        'emsRecordExists' => RecordExists::class,
-                        'EmsRecordExists' => RecordExists::class,
+                        'mapperrecordexists' => RecordExists::class,
+                        'mapperRecordExists' => RecordExists::class,
+                        'MapperRecordExists' => RecordExists::class,
                     ],
                 ]
             ],
