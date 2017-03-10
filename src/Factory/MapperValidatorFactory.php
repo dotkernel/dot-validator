@@ -16,7 +16,7 @@ use Dot\Validator\Mapper\AbstractRecord;
 use Interop\Container\ContainerInterface;
 
 /**
- * Class EmsValidatorFactory
+ * Class MapperValidatorFactory
  * @package Dot\Validator\Factory
  */
 class MapperValidatorFactory
