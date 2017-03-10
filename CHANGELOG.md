@@ -1,7 +1,7 @@
 ## 1.0.1 - 2017-03-10
 
 ### Added
-* Everything
+* Nothing
 
 ### Deprecated
 * Nothing
