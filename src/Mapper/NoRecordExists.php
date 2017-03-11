@@ -1,10 +1,8 @@
 <?php
 /**
- * @copyright: DotKernel
- * @library: dotkernel/dot-ems
- * @author: n3vrax
- * Date: 6/23/2016
- * Time: 9:09 PM
+ * @see https://github.com/dotkernel/dot-validator/ for the canonical source repository
+ * @copyright Copyright (c) 2017 Apidemia (https://www.apidemia.com)
+ * @license https://github.com/dotkernel/dot-validator/blob/master/LICENSE.md MIT License
  */
 
 declare(strict_types = 1);
