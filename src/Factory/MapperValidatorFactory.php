@@ -11,7 +11,7 @@ namespace Dot\Validator\Factory;
 
 use Dot\Mapper\Mapper\MapperManager;
 use Dot\Validator\Mapper\AbstractRecord;
-use Interop\Container\ContainerInterface;
+use Psr\Container\ContainerInterface;
 
 /**
  * Class MapperValidatorFactory
