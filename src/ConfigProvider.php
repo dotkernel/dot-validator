@@ -13,7 +13,7 @@ use Dot\Validator\Factory\MapperValidatorFactory;
 use Dot\Validator\Factory\ValidatorPluginManagerFactory;
 use Dot\Validator\Mapper\NoRecordExists;
 use Dot\Validator\Mapper\RecordExists;
-use Zend\Validator\ValidatorPluginManager;
+use Laminas\Validator\ValidatorPluginManager;
 
 /**
  * Class ConfigProvider

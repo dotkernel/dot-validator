@@ -10,7 +10,7 @@ declare(strict_types = 1);
 namespace Dot\Validator\Factory;
 
 use Psr\Container\ContainerInterface;
-use Zend\Validator\ValidatorPluginManager;
+use Laminas\Validator\ValidatorPluginManager;
 
 /**
  * Class ValidatorPluginManagerFactory

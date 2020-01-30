@@ -11,7 +11,7 @@ namespace Dot\Validator\Mapper;
 
 use Dot\Mapper\Mapper\MapperInterface;
 use Dot\Mapper\Mapper\MapperManager;
-use Zend\Validator\AbstractValidator;
+use Laminas\Validator\AbstractValidator;
 
 /**
  * Class AbstractRecord
