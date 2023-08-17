@@ -9,9 +9,9 @@ DotKernel validator component extending and customizing [laminas-validator](http
 
 ## Note
 
-**dot-validator** is in **maintenance** mode.
+> **dot-validator** is in **maintenance** mode.
 
-This package is considered feature-complete, and is now in **security-only** maintenance mode.
+> This package is considered feature-complete, and is now in **security-only** maintenance mode.
 
 
 
