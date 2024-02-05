@@ -2,7 +2,7 @@
 
 
 ![OSS Lifecycle](https://img.shields.io/osslifecycle/dotkernel/dot-validator)
-![PHP from Packagist (specify version)](https://img.shields.io/packagist/php-v/dotkernel/dot-validator/2.9.0)
+![PHP from Packagist (specify version)](https://img.shields.io/packagist/php-v/dotkernel/dot-validator/2.9.2)
 
 [![GitHub issues](https://img.shields.io/github/issues/dotkernel/dot-validator)](https://github.com/dotkernel/dot-validator/issues)
 [![GitHub forks](https://img.shields.io/github/forks/dotkernel/dot-validator)](https://github.com/dotkernel/dot-validator/network)
