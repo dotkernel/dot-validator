@@ -1,5 +1,9 @@
 # dot-validator
 
+> [!IMPORTANT]
+> dot-validator is a wrapper on top of [laminas-validator](https://github.com/laminas/laminas-validator)
+>
+> ![OSS Lifecycle](https://img.shields.io/osslifecycle/laminas/laminas-validator)
 
 ![OSS Lifecycle](https://img.shields.io/osslifecycle/dotkernel/dot-validator)
 ![PHP from Packagist (specify version)](https://img.shields.io/packagist/php-v/dotkernel/dot-validator/2.9.2)
